@@ -17,6 +17,10 @@ output "eks_cluster_version" {
   value = aws_eks_cluster.eks.version
   description = "EKS cluster version"
 }
+output "cluster_arn" {
+  value = aws_eks_cluster.eks.arn
+  description = "EKS cluster arn"
+}
 
 ## aws account id
 output "aws_account_id" {

@@ -8,7 +8,7 @@
 # .tfstate files
 *.tfstate
 *.tfstate.*
-*.tfstate.backup
+*.tfstate.backup 
 
 # Crash log files
 crash.log
@@ -42,3 +42,5 @@ terraform.rc
 
 
 .terraform.lock.hcl
+
+.envrc

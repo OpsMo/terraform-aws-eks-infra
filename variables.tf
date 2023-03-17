@@ -1,4 +1,3 @@
-## eks ckuster variables
 variable "env" {
     type = string
     default = "dev"
