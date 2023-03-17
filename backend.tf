@@ -1,4 +1,4 @@
-## backend for remote state file s3 and dynamodb
+## backend for remote state file s3 and dynamodb.
 terraform {
     backend "s3" {
         bucket = "s3-bucket-name"   

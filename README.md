@@ -32,7 +32,7 @@ This Terraform project to creates a complete AWS EKS cluster (including networki
 ## Usage 
 
 * Just Clone this repo
-* Make sure to update defualt values (you want) in `variables.tf` or create your own `terraform.tfvars` file.
+* Make sure to update defualt values (you want) in `variables.tf` or create your own `terraform.tfvars` file
 * Run `terraform init` to initialize the project
 * Run `terraform apply` `terraform apply` to create the EKS cluster
 

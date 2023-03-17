@@ -9,7 +9,7 @@ resource "aws_vpc" "main" {
   }
 }
 
-##### Subnets   #####
+##### Subnets  #####
 resource "aws_subnet" "private_AZ1" {
   vpc_id = aws_vpc.main.id
   cidr_block = "10.0.0.0/19"
