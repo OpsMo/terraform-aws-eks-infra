@@ -42,7 +42,7 @@ This will create the necessary S3 bucket and DynamoDB table for storing and lock
 	1.	Open the backend.tf file in the main directory.
 	2.	Update the bucket and dynamodb_table fields with the values from the previous step:
 ```bash
-    terraform {
+terraform {
   backend "s3" {
     bucket         = "your-s3-bucket-name"      # Replace with the created bucket name
     key            = "terraform/state.tfstate" # State file path
