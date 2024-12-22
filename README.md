@@ -24,15 +24,40 @@ This Terraform project to creates a complete AWS EKS cluster (including networki
 * AWS Cli (update/set credentials with `aws configure`)
 
 ## Before you run Terraform
-* Created S3 bucket and DynamoDB table and Update the `backend.tf` file (for remote terraform.tfstate)
-* Chack /set Terraform and EKS Versions
+### 1. Create S3 Bucket and DynamoDB Table for Backend
+1. Navigate to the `backend-creation` directory:
+   ```bash
+   cd backend-creation
+   ```
+2.	Initialize Terraform and apply the configuration:
+   ```bash
+    terraform init
+    terraform apply
+   ```
+This will create the necessary S3 bucket and DynamoDB table for storing and locking the Terraform state.
 
+3.	Note down the outputs for the S3 bucket name and DynamoDB table name.
+
+### 2. Update the backend.tf File
+	1.	Open the backend.tf file in the main directory.
+	2.	Update the bucket and dynamodb_table fields with the values from the previous step:
+```bash
+    terraform {
+  backend "s3" {
+    bucket         = "your-s3-bucket-name"      # Replace with the created bucket name
+    key            = "terraform/state.tfstate" # State file path
+    region         = "us-east-1"               # Match the region of the bucket
+    dynamodb_table = "tf-locking-state"        # Replace with the DynamoDB table name
+  }
+}
+```
 
 
 ## Usage 
 
 * Just Clone this repo
-* Make sure to update defualt values (you want) in `variables.tf` or create your own `terraform.tfvars` file
+* Ensure the AWS credentials are set correctly using aws configure.
+* Make sure to update defualt values in `variables.tf` or create your own `terraform.tfvars` file as mentioned in last step.
 * Run `terraform init` to initialize the project
 * Run `terraform apply` `terraform apply` to create the EKS cluster
 
